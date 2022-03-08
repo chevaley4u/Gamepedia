@@ -1,3 +1,4 @@
 PHP/vendor
 PHP/composer.lock
 PHP/.idea
+PHP/src/conf/conf.ini
