@@ -21,4 +21,5 @@ $db->bootEloquent();
 
 TD1::q1();
 TD1::q2();
-
+TD1::q3();
+TD1::q4();
