@@ -27,7 +27,12 @@ class TD1{
        }
 
        public static function q3(){
-
+            echo "<br><br> \n Platformes dont la base installée est >= 10 000 000 :\n";
+                 foreach (Platform::where("install_base", ">=", 10000000)->get() as $plat) {
+                      echo "<br>";
+                      echo "  " . $plat->name . "\n";
+                 }
+            echo "\n";
        }
 
        public static function q4(){
