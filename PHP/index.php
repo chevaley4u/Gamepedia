@@ -11,16 +11,14 @@ use \Illuminate\Database\Capsule\Manager as DB;
 use \Slim\Container;
 use \Slim\App;
 
-$configuration = [
-    'settings' => [
-    'displayErrorDetails' => true,
-    'dbconf' => '/conf/db.conf.ini' ]
-    ];
-    $c = new Container($configuration);
-    $app = new App($c);
+use Mygamepedia\controllers\TD1;
 
 $db = new DB();
 $db->addConnection(parse_ini_file('src/conf/conf.ini'));
 $db->setAsGlobal();
 $db->bootEloquent();
+
+
+TD1::q1();
+TD1::q2();
 
