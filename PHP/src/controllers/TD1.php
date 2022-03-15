@@ -42,4 +42,41 @@ class TD1{
                     echo  $i  . $games->name . "\n";
                }
        }
-}
+       
+
+       public static function q5(){
+          if(isset($_GET['page']) && !empty($_GET['page'])){
+               $currentPage = (int) strip_tags($_GET['page']);
+           }else{
+               $currentPage = 1;
+           }
+           $nbjeu =Game::select("*")->count();
+           $parPage = 500;
+           $pages = ceil($nbjeu / $parPage); 
+           $var1 = ($currentPage -1)  * $parPage;
+           if($currentPage != $pages){
+               $pageSuivante = $currentPage + 1; 
+           }else{
+               $pageSuivante = $pages;
+           }
+           if($currentPage != 1){
+               $pagePrécédente = $currentPage - 1; 
+           }else{
+               $pagePrécédente = 1;
+           }
+           echo "Pages actuelle " . $currentPage . "/" . $pages ."<br>";
+           echo " <a href='./?page=$pagePrécédente' class='page-link'>Page précédente</a>  ";
+           echo " <a href='./?page=$pageSuivante' class='page-link'>Page suivante       </a>";
+           
+           foreach(Game::where("id",">=",$var1)->where("id","<",($var1+500))->get() as $i=>$games){
+               echo "<br>";
+               echo  $games->id . " " . $games->name . "\n";
+          }
+       
+         
+
+         
+           
+             
+     }
+}    
