@@ -37,7 +37,7 @@ class TD1{
 
        public static function q4(){
           echo "<br><br> \n 442 jeux à partir du 21173ème :\n";
-               foreach(Game::where("id",">=",21173)->get() as $i=>$games){
+               foreach(Game::where("id",">=",21173)->where("id","<",21615)->get() as $i=>$games){
                     echo "<br>";
                     echo  $i  . $games->name . "\n";
                }
