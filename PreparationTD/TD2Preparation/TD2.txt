@@ -1,0 +1,77 @@
+Q1 :
+Categorie (id, nom, descr)
+Annonce (id, titre, date, texte)
+Photo (id, file, date, taille_octet, #idAnnonce)
+NouvelleTable (#idCateg, #idAnnonce)
+
+Q2 :
+
+//Categorie BelongsToMany Annonce
+public function annonces() {
+    return $this->belongsToMany(
+        'BDD\model\Annonce',
+        'nouvelleTable',
+        'Categorie',
+        'Annonce'
+    );
+}
+
+Annonce BelongsToMany Categorie
+public function categories() {
+    return $this->belongsToMany(
+        'BDD\model\Categorie',
+        'nouvelleTable',
+        'Annonce',
+        'Categorie'
+    );
+}
+
+Annonce hasMany Photo
+public function photos() {
+    return $this->hasMany(
+        'BDD\model\Photo',
+        'id',
+    );
+}
+
+Photo belongsTo Annonce
+public function photos() {
+    return $this->belongsTo(
+        'BDD\model\Annonce',
+        'id',
+    );
+}
+
+Q3 :
+
+echo "\n\nQUESTION 3.1\n";
+$annonce = Annonce::where("id","=",22)->first();
+$photos = $annonce->categories->get() ;
+foreach ($photos as $photo) {
+    echo "$photo->id : $photo->file\n";
+}
+
+
+echo "\n\nQUESTION 3.2\n";
+$annonce = Annonce::where("id","=",22)->first();
+$photos = $annonce->categories->where('taille_octet', '>', 100000)->get() ;
+foreach ($photos as $photo) {
+    echo "$photo->id : $photo->file\n";
+}
+
+
+echo "\n\nQUESTION 3.3\n";
+$annonces = Annonce::has('photo', '>', 3)-get();
+foreach ($annonces as $annonce) {
+    echo "$annonce->id : $annonce->titre"
+}
+
+
+echo "\n\nQUESTION 3.4\n";
+$annonces = Annonce::whereHas('photo',
+    function ($q) {
+        $q->where('taille_octet', '>', 100000);
+    })-get();
+foreach ($annonces as $annonce) {
+    echo "$annonce->id : $annonce->titre"
+}
