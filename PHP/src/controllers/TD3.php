@@ -2,6 +2,8 @@
 
 namespace Mygamepedia\controllers;
 
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 use Mygamepedia\models\Character;
 use Mygamepedia\models\Game;
 use Mygamepedia\models\Company;
@@ -50,6 +52,44 @@ class TD3
             }
         }
         $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "<br><br> temps d'exécution : ".$time." msec";
+
+        //5
+        echo "<br><br> \n Requête lister les jeux :\n";
+        echo "<br><br> \n Tout les jeux qui commence par 'R' :\n";
+        $time_start = microtime(true);
+        foreach (Game::where("name","like","R%")->get() as $game){
+        }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "<br><br> temps d'exécution : ".$time." msec";
+
+        echo "<br><br> \n Tout les jeux qui commence par 'V' :\n";
+        $time_start = microtime(true);
+        foreach (Game::where("name","like","V%")->get() as $game){
+        }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "<br><br> temps d'exécution : ".$time." msec";
+
+        echo "<br><br> \n Tout les jeux qui commence par 'L' :\n";
+        $time_start = microtime(true);
+        foreach (Game::where("name","like","L%")->get() as $game){
+        }
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+        echo "<br><br> temps d'exécution : ".$time." msec";
+
+        echo "<br><br> \n Creation index de la colonne 'name' et de la table 'game' :\n";
+        $time_start = microtime(true);
+        Game::table('game', function($table){
+           $table->unique('name');
+        });
+        $time_end = microtime(true);
+        Game::table('game', function($table){
+            $table->dropUnique('game_name_index');
+        });
         $time = $time_end - $time_start;
         echo "<br><br> temps d'exécution : ".$time." msec";
     }
