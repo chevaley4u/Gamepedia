@@ -10,4 +10,3 @@ class Game extends \Illuminate\Database\Eloquent\Model
         return $this->belongsToMany('Mygamepedia\models\Character', 'game2character', "game_id", "character_id");
     }
 }
-

@@ -16,13 +16,18 @@ class TD2{
                 echo "<br>";
                 echo "  " . $chara->name ." : " . $chara->deck . "\n" ;
             }
-
         }
         
         echo "\n";
     }
     public static function q2(){
-        echo "<br><br> \n Personnages des jeux commençant par Mario :\n";
-        
+        echo "<br> <h2> Personnages des jeux commençant par Mario : </h2> <br>";
+        foreach (Game::where("name", "like", "Mario%")->get() as $jeux) {
+            echo "titre : " . $jeux->name . "<br>";
+            foreach ($jeux->charac as $persos){
+                echo "personnage : " . ($persos->name) . "<br>";
+            }
+            echo "<br>";
+        }
     }
 }
