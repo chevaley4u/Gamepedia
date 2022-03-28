@@ -16,7 +16,15 @@ Partie 2
 
     Décrivez la structure du log de requêtes dans Eloquent.
 
+        Ce qui est conservé dans le log est la traduction des requetes Laravel en SQL, les parametres de
+        la requete sont précisés à part.
 
+        ex: array:1 [▼
+              0 => array:3 [▼
+                "query" => "select * from `users`"
+                "bindings" => []
+              ]
+            ]
 
     expliquez le problème des N+1 query
 
