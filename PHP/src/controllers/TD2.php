@@ -90,7 +90,28 @@ class TD2{
     }
 
     public static function q8(){
-
+        echo "<br><br> \n Jeux dont le nom débute par Mario, publiés par une compagnie dont le nom contient 'Inc.', dont le rating contient 3+ et ayant reçu un avis de la part du rating board nommé 'CERO'   :\n";
+        $nb = 0;
+        foreach (Game::where("name","like","Mario%")->get() as $games){
+            foreach ($games->company as $comp){
+                if(str_contains($comp->name,"Inc.")){
+                    foreach ($games->ratings as $rank){
+                        if(str_contains($rank->name,"3+")){
+                            $b = $rank->board()->get();
+                            if($b === "CERO"){
+                                $nb ++;
+                                echo "<br>";
+                                echo $games->name." : published by ".$comp->name." ; ranking :".$rank->name." ; board :".$b->name;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if($nb === 0){
+            echo "<br>";
+            echo "Aucun jeu ne correspond à la selection";
+        }
     }
 
     public static function q9(){

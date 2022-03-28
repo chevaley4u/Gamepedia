@@ -13,5 +13,9 @@ class Game extends \Illuminate\Database\Eloquent\Model
     public function ratings(){
         return $this->belongsToMany('Mygamepedia\models\Rating','game2rating','game_id','rating_id');
     }
+
+    public function company(){
+        return $this->belongsToMany('Mygamepedia\models\Company','game_publishers','game_id','comp_id');
+    }
 }
 
