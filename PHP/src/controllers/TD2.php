@@ -5,7 +5,9 @@ namespace Mygamepedia\controllers;
 use Mygamepedia\models\Character;
 use Mygamepedia\models\Game;
 use Mygamepedia\models\Company;
+use Mygamepedia\models\game2genre;
 use Mygamepedia\models\Platform;
+use Mygamepedia\models\Genre;
 
 class TD2{
 
@@ -35,7 +37,7 @@ class TD2{
     public static function q3()
     {
         echo "<br><br> \n les jeux développés par une compagnie dont le nom contient Sony \n <br><br>";
-        foreach (Company::where("name", "like", '%' . 'Sony' . '%')->get() as $company) {
+        foreach (Company::where("name", "like", '%'. 'Sony' . '%')->get() as $company) {
             echo $company->name . "<br><br>";
             foreach ($company->games as $game) {
                 echo $game->name . "<br>";
@@ -46,7 +48,7 @@ class TD2{
 
     public static function q4(){
         echo "<br><br> \n Rating des jeux dont le nom contient Mario :\n";
-        foreach (Game::where("name","like","%Mario%")->get() as $games){
+        foreach (Game::where("name","like","Mario%")->get() as $games){
             foreach ($games->ratings as $rank){
                 echo "<br><br>";
                 echo " ".$games->name." : ".$rank->name;
@@ -82,6 +84,37 @@ class TD2{
 
     public static function q9(){
 
-    }
+        $id1 = Genre::where("id","=","51");
+        $id1->delete();
+
+        foreach(game2genre::where("genre_id","=","51")->get() as $del){
+            $del->delete();
+        }
+
+        $genre = Genre::create([
+            'id' => '51' , 'name' => 'test'
+        ]);
+        $genre->save();
+
+        $game1 = game2genre::create([
+            'game_id' => '12' , 'genre_id' => '51'
+        ]);
+        $game2 = game2genre::create([
+            'game_id' => '56' , 'genre_id' => '51'
+        ]);
+        $game3 = game2genre::create([
+            'game_id' => '12' , 'genre_id' => '51'
+        ]);
+        $game4 = game2genre::create([
+            'game_id' => '345' , 'genre_id' => '51'
+        ]);
+
+        $game1->save();     
+        $game2->save();
+        $game3->save();
+        $game4->save();
+
+
+    }   
 
 }
