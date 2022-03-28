@@ -32,9 +32,7 @@ class TD3
         //3
         echo "<br><br> \n Personnage dont les jeux commence par 'Mario' :\n";
         $time_start = microtime(true);
-        foreach (Game::where("name","like","Mario%")->get() as $game){
-            foreach ($game->charac as $char){
-            }
+        foreach (Game::select("*")->where("name","like","Mario%")->with("charac")->get() as $game){
         }
         $time_end = microtime(true);
         $time = $time_end - $time_start;
@@ -43,11 +41,7 @@ class TD3
         //4
         echo "<br><br> \n Tout les jeux qui commence par 'Mario' et qui on un rating qui contient '3+' :\n";
         $time_start = microtime(true);
-        foreach (Game::where("name","like","Mario%")->get() as $game){
-            foreach ($game->ratings as $rank){
-                if(str_contains($rank->name,"3+")){
-                }
-            }
+        foreach (Game::select("*")->where("name","like","Mario%")->with("ratings")->get() as $game){
         }
         $time_end = microtime(true);
         $time = $time_end - $time_start;
