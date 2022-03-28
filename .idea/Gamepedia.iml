@@ -2,7 +2,36 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/slim/slim" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/pimple/pimple" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/nikic/fast-route" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/illuminate/database" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/illuminate/container" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/illuminate/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/illuminate/support" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/illuminate/macroable" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/composer" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

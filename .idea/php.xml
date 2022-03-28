@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/PHP/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/PHP/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/PHP/vendor/slim/slim" />
+      <path value="$PROJECT_DIR$/PHP/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/PHP/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/PHP/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/PHP/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/PHP/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/PHP/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/PHP/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/PHP/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/PHP/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/PHP/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/PHP/vendor/illuminate/collections" />
+      <path value="$PROJECT_DIR$/PHP/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/PHP/vendor/illuminate/macroable" />
+      <path value="$PROJECT_DIR$/PHP/vendor/composer" />
+    </include_path>
+  </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
