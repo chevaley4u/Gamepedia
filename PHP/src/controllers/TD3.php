@@ -12,7 +12,7 @@ class TD3
 {
     public static function p1(){
         //1
-        echo "<br><br> \n Tout les jeux :\n";
+        echo "<br><br> \n Tous les jeux :\n";
         $time_start = microtime(true);
         foreach (Game::select('*')->get() as $game){
         }
@@ -21,7 +21,7 @@ class TD3
         echo "<br><br> temps d'exécution : ".$time." msec";
 
         //2
-        echo "<br><br> \n Tout les jeux qui commence par 'Mario' :\n";
+        echo "<br><br> \n Tous les jeux qui commencent par 'Mario' :\n";
         $time_start = microtime(true);
         foreach (Game::where("name","like","Mario%")->get() as $game){
         }
@@ -30,7 +30,7 @@ class TD3
         echo "<br><br> temps d'exécution : ".$time." msec";
 
         //3
-        echo "<br><br> \n Personnage dont les jeux commence par 'Mario' :\n";
+        echo "<br><br> \n Personnage dont les jeux commencent par 'Mario' :\n";
         $time_start = microtime(true);
         foreach (Game::where("name","like","Mario%")->get() as $game){
             foreach ($game->charac as $char){
@@ -41,7 +41,7 @@ class TD3
         echo "<br><br> temps d'exécution : ".$time." msec";
 
         //4
-        echo "<br><br> \n Tout les jeux qui commence par 'Mario' et qui on un rating qui contient '3+' :\n";
+        echo "<br><br> \n Tous les jeux qui commencent par 'Mario' et qui ont un rating qui contient '3+' :\n";
         $time_start = microtime(true);
         foreach (Game::where("name","like","Mario%")->get() as $game){
             foreach ($game->ratings as $rank){
