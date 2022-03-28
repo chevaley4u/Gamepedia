@@ -57,7 +57,7 @@ class TD3
 
         //5
         echo "<br><br> \n Requête lister les jeux :\n";
-        echo "<br><br> \n Tout les jeux qui commence par 'R' :\n";
+        echo "<br><br> \n Tous les jeux qui commencent par 'R' :\n";
         $time_start = microtime(true);
         foreach (Game::where("name","like","R%")->get() as $game){
         }
@@ -65,7 +65,7 @@ class TD3
         $time = $time_end - $time_start;
         echo "<br><br> temps d'exécution : ".$time." msec";
 
-        echo "<br><br> \n Tout les jeux qui commence par 'V' :\n";
+        echo "<br><br> \n Tous les jeux qui commencent par 'V' :\n";
         $time_start = microtime(true);
         foreach (Game::where("name","like","V%")->get() as $game){
         }
@@ -73,7 +73,7 @@ class TD3
         $time = $time_end - $time_start;
         echo "<br><br> temps d'exécution : ".$time." msec";
 
-        echo "<br><br> \n Tout les jeux qui commence par 'L' :\n";
+        echo "<br><br> \n Tous les jeux qui commencent par 'L' :\n";
         $time_start = microtime(true);
         foreach (Game::where("name","like","L%")->get() as $game){
         }
