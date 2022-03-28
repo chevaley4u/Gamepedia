@@ -16,14 +16,19 @@ class TD2{
                 echo "<br>";
                 echo "  " . $chara->name ." : " . $chara->deck . "\n" ;
             }
-
         }
         
         echo "\n";
     }
     public static function q2(){
-        echo "<br><br> \n Personnages des jeux commençant par Mario :\n";
-        
+        echo "<br> <h2> Personnages des jeux commençant par Mario : </h2> <br>";
+        foreach (Game::where("name", "like", "Mario%")->get() as $jeux) {
+            echo "titre : " . $jeux->name . "<br>";
+            foreach ($jeux->charac as $persos){
+                echo "personnage : " . ($persos->name) . "<br>";
+            }
+            echo "<br>";
+        }
     }
 
 
@@ -44,7 +49,7 @@ class TD2{
         foreach (Game::where("name","like","%Mario%")->get() as $games){
             foreach ($games->ratings as $rank){
                 echo "<br><br>";
-                echo " ".$games->name." | ".$rank->name." : ".$rank->deck;
+                echo " ".$games->name." : ".$rank->name;
             }
         }
     }
@@ -61,4 +66,22 @@ class TD2{
             }
         }
     }
+
+
+    public static function q6(){
+
+    }
+
+    public static function q7(){
+
+    }
+
+    public static function q8(){
+
+    }
+
+    public static function q9(){
+
+    }
+
 }
