@@ -29,5 +29,5 @@ $db->bootEloquent();
 
 
 //TD2::q1();
-TD2::q2();
-
+//TD2::q2();
+TD2::q3();

@@ -25,4 +25,15 @@ class TD2{
         echo "<br><br> \n Personnages des jeux commençant par Mario :\n";
         
     }
+
+    public static function q3(){
+        echo "<br><br> \n les jeux développés par une compagnie dont le nom contient Sony \n <br><br>";
+        foreach(Company::where("name","like",'%'.'Sony'.'%')->get() as $company){
+            echo $company->name . "<br><br>";
+            foreach($company->games as $game){
+                echo $game->name . "<br>";
+            }
+            echo  "<br> <br>";
+        }
+    }
 }
