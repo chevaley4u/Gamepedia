@@ -2,7 +2,7 @@
 
 class Rating extends \Illuminate\Database\Eloquent\Model
 {
-    protected $table = 'rating_board';
+    protected $table = 'game_rating';
     protected $primaryKey = 'id';
     public $timestamps = false;
 

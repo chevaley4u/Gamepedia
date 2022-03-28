@@ -49,8 +49,29 @@ class TD2{
         foreach (Game::where("name","like","%Mario%")->get() as $games){
             foreach ($games->ratings as $rank){
                 echo "<br><br>";
-                echo " ".$games->name." | ".$rank->name." : ".$rank->deck;
+                echo " ".$games->name." : ".$rank->name;
             }
         }
     }
+
+    public static function q5(){
+
+    }
+
+    public static function q6(){
+
+    }
+
+    public static function q7(){
+
+    }
+
+    public static function q8(){
+
+    }
+
+    public static function q9(){
+
+    }
+
 }
