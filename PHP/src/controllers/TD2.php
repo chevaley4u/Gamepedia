@@ -109,8 +109,8 @@ class TD2{
                 if(str_contains($comp->name,"Inc.")){
                     foreach ($games->ratings as $rank){
                         if(str_contains($rank->name,"3+")){
-                            $b = $rank->board()->get();
-                            if($b === "CERO"){
+                            $b = $rank->board->first();
+                            if($b->name == "CERO"){
                                 $nb ++;
                                 echo "<br>";
                                 echo $games->name." : published by ".$comp->name." ; ranking :".$rank->name." ; board :".$b->name;
