@@ -72,11 +72,5 @@ class TD1{
                echo "<br>";
                echo  $games->id . " " . $games->name . "\n";
           }
-       
-         
-
-         
-           
-             
      }
 }    
