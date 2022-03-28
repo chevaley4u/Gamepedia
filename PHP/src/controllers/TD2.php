@@ -12,12 +12,14 @@ class TD2{
 
     public static function q1(){
         echo "<br><br> \n Personnages du Jeu 12342 :\n";
-        foreach (Character::with("game2character")->were("game_id","=",12342)->get() as $chara) {
-            foreach ($chara->Game as $game){
+        foreach (Game::where("id","=",12342)->get() as $game) {
+           foreach ($game->charac as $chara){
                 echo "<br>";
-                echo "  " . $chara->name ." : " . $chara->deck . "\n";
+                echo "  " . $chara->name ." : " . $chara->deck . "\n" ;
             }
+
         }
+        
         echo "\n";
     }
 
