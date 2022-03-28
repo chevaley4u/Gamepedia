@@ -69,6 +69,15 @@ class TD2{
 
 
     public static function q6(){
+        echo "<br><br> \n Jeux dont le nom débute par Mario et le rating contient 3+  :\n";
+        foreach (Game::where("name","like","Mario%")->get() as $games){
+            foreach ($games->ratings as $rank){
+                if(str_contains($rank->name,"3+")){
+                    echo "<br>";
+                    echo $games->name." : ".$rank->name;
+                }
+            }
+        }
 
     }
 
