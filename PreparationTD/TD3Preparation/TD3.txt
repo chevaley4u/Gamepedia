@@ -1,0 +1,35 @@
+Partie 1
+
+    Temps d'exécution d'une séquence d'instructions PHP
+
+        $time_start = microtime(true);
+        //instructions
+        $time_end = microtime(true);
+        $time = $time_end - $time_start;
+
+    Principe d'un index sur une colonne de table
+
+        Cela permet d'accélerer la recherche de données, au lieu de regarder chaque ligne on utilise des index
+        pour sélectionner seulement les colonnes sur lesquelles on veut faire la recherche.
+
+Partie 2
+
+    Décrivez la structure du log de requêtes dans Eloquent.
+
+        Ce qui est conservé dans le log est la traduction des requetes Laravel en SQL, les parametres de
+        la requete sont précisés à part.
+
+        ex: array:1 [▼
+              0 => array:3 [▼
+                "query" => "select * from `users`"
+                "bindings" => []
+              ]
+            ]
+
+    expliquez le problème des N+1 query
+
+        Le problème des requêtes N+1 survient lorsque dans une table contenant N objets, on a
+        N requêtes supplémentaires pour récupérer les mêmes données que celles qui auraient pu être récupérées
+        lors de l'exécution de la requête principale.
+        Plus la valeur de N est grande, plus le nombre de requêtes exécutées est élevé, et cela peut causer des
+        ralentissements.
