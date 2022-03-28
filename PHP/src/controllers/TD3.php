@@ -80,18 +80,9 @@ class TD3
         $time_end = microtime(true);
         $time = $time_end - $time_start;
         echo "<br><br> temps d'exécution : ".$time." msec";
+    }
+    public static function p2($function){
 
-        echo "<br><br> \n Creation index de la colonne 'name' et de la table 'game' :\n";
-        $time_start = microtime(true);
-        Game::table('game', function($table){
-           $table->unique('name');
-        });
-        $time_end = microtime(true);
-        Game::table('game', function($table){
-            $table->dropUnique('game_name_index');
-        });
-        $time = $time_end - $time_start;
-        echo "<br><br> temps d'exécution : ".$time." msec";
     }
 }
 

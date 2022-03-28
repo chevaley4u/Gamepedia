@@ -8,10 +8,13 @@ use Mygamepedia\models\Company;
 use Mygamepedia\models\game2genre;
 use Mygamepedia\models\Platform;
 use Mygamepedia\models\Genre;
+use \Illuminate\Database\Capsule\Manager as DB;
+
 
 class TD2{
 
     public static function q1(){
+        DB::enableQueryLog();
         echo "<br><br> \n Personnages du Jeu 12342 :\n";
         foreach (Game::where("id","=",12342)->get() as $game) {
            foreach ($game->charac as $chara){
@@ -21,9 +24,18 @@ class TD2{
         }
         
         echo "\n";
+        // pour afficher les logs des requetes lancees
+        /*
+        foreach(DB::getQueryLog() as $log){
+            foreach ($log as $vrailog){
+                var_dump($vrailog);
+                echo("<br>");
+            }
+        }
+        */
     }
-
     public static function q2(){
+        DB::enableQueryLog();
         echo "<br> <h2> Personnages des jeux commençant par Mario : </h2> <br>";
         foreach (Game::where("name", "like", "Mario%")->get() as $jeux) {
             echo "titre : " . $jeux->name . "<br>";
@@ -32,11 +44,21 @@ class TD2{
             }
             echo "<br>";
         }
+        // pour afficher les logs des requetes lancees
+        /*
+        foreach(DB::getQueryLog() as $log){
+            foreach ($log as $vrailog){
+                var_dump($vrailog);
+                echo("<br>");
+            }
+        }
+        */
     }
 
 
     public static function q3()
     {
+        DB::enableQueryLog();
         echo "<br><br> \n les jeux développés par une compagnie dont le nom contient Sony \n <br><br>";
         foreach (Company::where("name", "like", '%'. 'Sony' . '%')->get() as $company) {
             echo $company->name . "<br><br>";
@@ -45,9 +67,19 @@ class TD2{
             }
             echo "<br> <br>";
         }
+        // pour afficher les logs des requetes lancees
+        /*
+        foreach(DB::getQueryLog() as $log){
+            foreach ($log as $vrailog){
+                var_dump($vrailog);
+                echo("<br>");
+            }
+        }
+        */
     }
 
     public static function q4(){
+        DB::enableQueryLog();
         echo "<br><br> \n Rating des jeux dont le nom contient Mario :\n";
         foreach (Game::where("name","like","Mario%")->get() as $games){
             foreach ($games->ratings as $rank){
@@ -55,6 +87,15 @@ class TD2{
                 echo " ".$games->name." : ".$rank->name;
             }
         }
+        // pour afficher les logs des requetes lancees
+        /*
+        foreach(DB::getQueryLog() as $log){
+            foreach ($log as $vrailog){
+                var_dump($vrailog);
+                echo("<br>");
+            }
+        }
+        */
     }
 
     public static function q5(){
@@ -91,17 +132,16 @@ class TD2{
                 if(str_contains($comp->name,"Inc.")){
                     foreach ($games->ratings as $rank){
                         if(str_contains($rank->name,"3+")){
-                                echo $games->name." : published by ".$comp->name." ; ranking :".$rank->name." ;<br>";
-
+                            echo $games->name." : published by ".$comp->name." ; ranking :".$rank->name." ;<br>";
                         }
                     }
                 }
             }
-        }
-        
+        } 
     }
 
     public static function q8(){
+        
         echo "<br><br> \n Jeux dont le nom débute par Mario, publiés par une compagnie dont le nom contient 'Inc.', dont le rating contient 3+ et ayant reçu un avis de la part du rating board nommé 'CERO'   :\n";
         $nb = 0;
         foreach (Game::where("name","like","Mario%")->get() as $games){
@@ -157,6 +197,8 @@ class TD2{
         $game2->save();
         $game3->save();
         $game4->save();
+
+
     }   
 
 }
