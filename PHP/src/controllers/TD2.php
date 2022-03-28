@@ -22,6 +22,7 @@ class TD2{
         
         echo "\n";
     }
+
     public static function q2(){
         echo "<br> <h2> Personnages des jeux commençant par Mario : </h2> <br>";
         foreach (Game::where("name", "like", "Mario%")->get() as $jeux) {
@@ -85,7 +86,18 @@ class TD2{
 
     public static function q7(){
         echo "<br> <h2> Personnages des jeux commençant par Mario, publiés par une compagnie dont le nom contient'Inc.' et dont le rating initial contient '3+'</h2> <br>";
-        $mario = Game::where("name","like","%Mario%")->get();
+        foreach (Game::where("name","like","Mario%")->get() as $games){
+            foreach ($games->company as $comp){
+                if(str_contains($comp->name,"Inc.")){
+                    foreach ($games->ratings as $rank){
+                        if(str_contains($rank->name,"3+")){
+                                echo $games->name." : published by ".$comp->name." ; ranking :".$rank->name." ;<br>";
+
+                        }
+                    }
+                }
+            }
+        }
         
     }
 
@@ -145,8 +157,6 @@ class TD2{
         $game2->save();
         $game3->save();
         $game4->save();
-
-
     }   
 
 }
