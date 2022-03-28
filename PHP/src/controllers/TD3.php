@@ -30,7 +30,7 @@ class TD3
         echo "<br><br> temps d'exécution : ".$time." msec";
 
         //3
-        echo "<br><br> \n Personnage dont les jeux commencent par 'Mario' :\n";
+        echo "<br><br> \n Personnages dont les jeux commencent par 'Mario' :\n";
         $time_start = microtime(true);
         foreach (Game::where("name","like","Mario%")->get() as $game){
             foreach ($game->charac as $char){
