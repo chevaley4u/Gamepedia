@@ -1,0 +1,13 @@
+• comment s'installe faker ?
+
+    Pour installer Faker il faut avoir version de PHP >= 7.1 et faire
+    composer require fakerphp/faker
+
+• donnez un exemple de code pour générer une adresse américaine en utilisant faker
+
+    $faker = Faker\Factory::create();
+    $faker->address();
+
+• formatez une date en type DateTime : "2017/02/16 (16:15)"
+
+    date_format($faker->date(), 'Y/m/d').' ('.date_format($faker->time(), 'H:i').')';
