@@ -14,6 +14,7 @@ use \Slim\App;
 use Mygamepedia\controllers\TD1;
 use Mygamepedia\controllers\TD2;
 use Mygamepedia\controllers\TD3;
+use Mygamepedia\controllers\TD4;
 
 $db = new DB();
 $db->addConnection(parse_ini_file('src/conf/conf.ini'));
@@ -39,3 +40,4 @@ TD2::q2();
 
 //TD3::p1();
 
+TD4::p1();
