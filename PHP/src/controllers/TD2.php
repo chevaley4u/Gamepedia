@@ -55,7 +55,7 @@ class TD2{
     }
 
     public static function q5(){
-        echo "<br><br> \n Rating des jeux dont le nom contient Mario :\n";
+        echo "<br><br> \n les jeux dont le nom débute par Mario et ayant plus de 3 personnages        \n";
         foreach (Game::where("name","like","Mario%")->get() as $games){
             $i = 0;
             foreach ($games->charac as $chara){
