@@ -11,31 +11,88 @@ class TD2{
 
     public static function q1(){
         echo "<br><br> \n Personnages du Jeu 12342 :\n";
-        foreach (Character::with("game2character")->were("game_id","=",12342)->get() as $chara) {
-            foreach ($chara->Game as $game){
+        foreach (Game::where("id","=",12342)->get() as $game) {
+           foreach ($game->charac as $chara){
                 echo "<br>";
-                echo "  " . $chara->name ." : " . $chara->deck . "\n";
+                echo "  " . $chara->name ." : " . $chara->deck . "\n" ;
             }
         }
+        
         echo "\n";
     }
     public static function q2(){
-        echo "<br><br> \n Personnages des jeux commençant par Mario :\n";
-
+        echo "<br> <h2> Personnages des jeux commençant par Mario : </h2> <br>";
+        foreach (Game::where("name", "like", "Mario%")->get() as $jeux) {
+            echo "titre : " . $jeux->name . "<br>";
+            foreach ($jeux->charac as $persos){
+                echo "personnage : " . ($persos->name) . "<br>";
+            }
+            echo "<br>";
+        }
     }
 
+
     public static function q3()
-        {
-            echo "<br><br> \n jeux développés par une compagnie dont le nom contient 'Sony':\n";
-            $companies = Company::where("name", "LIKE", "%Sony%")->get()->toArray();
-            foreach ($companies as $c) {
-                echo "    - " . $c['name'] ."\n";
-                $games = Company::where("id", "=", $c['id'])->first()->game_developers->toArray();
-                foreach ($games as $g) {
-                    echo "        - " . $g['name'] ."\n";
+    {
+        echo "<br><br> \n les jeux développés par une compagnie dont le nom contient Sony \n <br><br>";
+        foreach (Company::where("name", "like", '%' . 'Sony' . '%')->get() as $company) {
+            echo $company->name . "<br><br>";
+            foreach ($company->games as $game) {
+                echo $game->name . "<br>";
+            }
+            echo "<br> <br>";
+        }
+    }
+
+    public static function q4(){
+        echo "<br><br> \n Rating des jeux dont le nom contient Mario :\n";
+        foreach (Game::where("name","like","%Mario%")->get() as $games){
+            foreach ($games->ratings as $rank){
+                echo "<br><br>";
+                echo " ".$games->name." : ".$rank->name;
+            }
+        }
+    }
+
+    public static function q5(){
+        echo "<br><br> \n les jeux dont le nom débute par Mario et ayant plus de 3 personnages        \n";
+        foreach (Game::where("name","like","Mario%")->get() as $games){
+            $i = 0;
+            foreach ($games->charac as $chara){
+               $i++;
+            }
+            if($i >=3){
+                echo $games->name . "<br>";
+            }
+        }
+    }
+
+
+    public static function q6(){
+        echo "<br><br> \n Jeux dont le nom débute par Mario et le rating contient 3+  :\n";
+        foreach (Game::where("name","like","Mario%")->get() as $games){
+            foreach ($games->ratings as $rank){
+                if(str_contains($rank->name,"3+")){
+                    echo "<br>";
+                    echo $games->name." : ".$rank->name;
                 }
             }
         }
 
+    }
+
+    public static function q7(){
+        echo "<br> <h2> Personnages des jeux commençant par Mario, publiés par une compagnie dont le nom contient'Inc.' et dont le rating initial contient '3+'</h2> <br>";
+        $mario = Game::where("name","like","%Mario%")->get();
+        
+    }
+
+    public static function q8(){
+
+    }
+
+    public static function q9(){
+
+    }
 
 }
