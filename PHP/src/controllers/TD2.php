@@ -30,4 +30,27 @@ class TD2{
             echo "<br>";
         }
     }
+
+
+    public static function q3()
+    {
+        echo "<br><br> \n les jeux développés par une compagnie dont le nom contient Sony \n <br><br>";
+        foreach (Company::where("name", "like", '%' . 'Sony' . '%')->get() as $company) {
+            echo $company->name . "<br><br>";
+            foreach ($company->games as $game) {
+                echo $game->name . "<br>";
+            }
+            echo "<br> <br>";
+        }
+    }
+
+    public static function q4(){
+        echo "<br><br> \n Rating des jeux dont le nom contient Mario :\n";
+        foreach (Game::where("name","like","%Mario%")->get() as $games){
+            foreach ($games->ratings as $rank){
+                echo "<br><br>";
+                echo " ".$games->name." | ".$rank->name." : ".$rank->deck;
+            }
+        }
+    }
 }
