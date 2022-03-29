@@ -40,4 +40,5 @@ $db->bootEloquent();
 
 //TD3::p1();
 
-TD4::p1();
+//TD4::p1();
+TD4::p2();

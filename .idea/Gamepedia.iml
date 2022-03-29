@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/PHP/src" isTestSource="false" packagePrefix="Mygamepedia\" />
       <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/slim/slim" />
@@ -31,6 +32,7 @@
       <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/illuminate/support" />
       <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/illuminate/macroable" />
       <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/PHP/vendor/fakerphp/faker" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

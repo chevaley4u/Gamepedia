@@ -30,9 +30,10 @@
       <path value="$PROJECT_DIR$/PHP/vendor/illuminate/support" />
       <path value="$PROJECT_DIR$/PHP/vendor/illuminate/macroable" />
       <path value="$PROJECT_DIR$/PHP/vendor/composer" />
+      <path value="$PROJECT_DIR$/PHP/vendor/fakerphp/faker" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7">
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
 </project>
